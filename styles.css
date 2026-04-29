@@ -590,13 +590,6 @@ textarea {
   transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
 
-.booking-enquiry__field select {
-  min-height: 3.55rem;
-  padding-right: 2.5rem;
-  font-size: 1rem;
-  line-height: 1.35;
-}
-
 .booking-enquiry__field textarea {
   resize: vertical;
 }
@@ -734,6 +727,11 @@ textarea {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .booking-enquiry__field--service {
+    grid-column: 1 / -1;
+    width: min(100%, 28rem);
+  }
+
   .booking-enquiry__field--message,
   .booking-enquiry__submit,
   .booking-enquiry__status {
@@ -833,12 +831,6 @@ textarea {
     border-radius: 22px;
   }
 
-  .booking-enquiry__field select {
-    min-height: 3.8rem;
-    padding-top: 0.9rem;
-    padding-bottom: 0.9rem;
-    font-size: 1.02rem;
-  }
 }
 
 @media (max-width: 380px) {
