@@ -31,7 +31,7 @@ const createPlaceholderSvg = (label) => {
       <circle cx="150" cy="760" r="260" fill="#e9ad93" opacity="0.22"/>
       <path d="M332 514 C450 390 564 390 682 514 C566 638 448 638 332 514Z" fill="#fffaf2" opacity="0.45"/>
       <text x="600" y="472" text-anchor="middle" fill="#5b4767" font-family="Georgia, serif" font-size="54" font-weight="700">${safeLabel}</text>
-      <text x="600" y="535" text-anchor="middle" fill="#70665f" font-family="Arial, sans-serif" font-size="26">Replace this file in /images</text>
+      <text x="600" y="535" text-anchor="middle" fill="#70665f" font-family="Arial, sans-serif" font-size="26">True North Therapy</text>
     </svg>
   `)}`;
 };
@@ -55,14 +55,14 @@ if (menuButton && navigation) {
 if (enquiryForm && enquiryStatus) {
   enquiryForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    enquiryStatus.textContent = "Thank you. This placeholder form is ready to connect to your booking or email system.";
+    enquiryStatus.textContent = "Thank you for your enquiry. I will be in touch with you soon.";
     enquiryForm.reset();
   });
 }
 
 placeholderImages.forEach((image) => {
   const applyFallback = () => {
-    image.src = createPlaceholderSvg(image.dataset.placeholder || "Image placeholder");
+    image.src = createPlaceholderSvg(image.dataset.placeholder || "True North Therapy");
   };
 
   image.addEventListener("error", applyFallback, { once: true });
