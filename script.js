@@ -53,10 +53,38 @@ if (menuButton && navigation) {
 }
 
 if (enquiryForm && enquiryStatus) {
-  enquiryForm.addEventListener("submit", (event) => {
+  enquiryForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    enquiryStatus.textContent = "Thank you for your enquiry. I will be in touch with you soon.";
-    enquiryForm.reset();
+
+    const submitButton = enquiryForm.querySelector(".booking-enquiry__submit");
+    const formData = new FormData(enquiryForm);
+
+    enquiryStatus.textContent = "Sending your enquiry...";
+
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      enquiryStatus.textContent = "Thank you for your enquiry. I will be in touch with you soon.";
+      enquiryForm.reset();
+    } catch (error) {
+      enquiryStatus.textContent = "Sorry, something went wrong. Please try again or email me directly.";
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+    }
   });
 }
 

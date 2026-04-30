@@ -8,6 +8,7 @@
       content="I'm Lynn, and through Rapid Reset Studio I offer RTT therapy, tarot guidance and crystal healing in a warm, spiritual and supportive setting."
     />
     <title>Rapid Reset Studio | RTT Therapy, Tarot Guidance & Crystal Healing</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,14 +20,15 @@
   <body>
     <header class="site-header">
       <a class="site-header__brand" href="#home" aria-label="Rapid Reset Studio home">
-        <span class="site-header__brand-mark" aria-hidden="true">N</span>
-        <span>Rapid Reset Studio</span>
+        <img class="site-header__logo" src="images/header-logo.png" alt="Rapid Reset Studio" />
       </a>
 
       <button class="site-header__menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
-        <span class="site-header__menu-line"></span>
-        <span class="site-header__menu-line"></span>
-        <span class="site-header__menu-line"></span>
+        <span class="site-header__menu-icon" aria-hidden="true">
+          <span class="site-header__menu-moon"></span>
+          <span class="site-header__menu-sparkle"></span>
+          <span class="site-header__menu-dot"></span>
+        </span>
       </button>
 
       <nav class="site-navigation" aria-label="Main navigation">
@@ -43,7 +45,7 @@
         <div class="home-hero__content">
           <p class="home-hero__eyebrow">Spiritual therapy and intuitive guidance</p>
           <h1 class="home-hero__title">Find your true north</h1>
-          <p class="home-hero__subtitle">I am Lynn, and I offer RTT therapy, tarot guidance and crystal healing.</p>
+          <p class="home-hero__subtitle">I'm Lynn, and I offer RTT therapy, tarot guidance and crystal healing.</p>
           <p class="home-hero__intro">
             I created Rapid Reset Studio to help you reconnect with yourself, find clarity and move forward with
             warmth, guidance and support. This is a gentle space for reflection, release and a deeper sense of
@@ -74,8 +76,8 @@
         </p>
       </section>
 
-      <section class="about-lynn" id="about">
-        <div class="section-heading section-heading--centered">
+      <section class="about-lynn">
+        <div class="section-heading section-heading--centered section-anchor" id="about">
           <p class="section-heading__eyebrow">About Me</p>
           <h2 class="section-heading__title">My life has been shaped by people, places and gentle spiritual guidance</h2>
         </div>
@@ -125,8 +127,8 @@
         </div>
       </section>
 
-      <section class="services-overview" id="services">
-        <div class="section-heading">
+      <section class="services-overview">
+        <div class="section-heading section-anchor" id="services">
           <p class="section-heading__eyebrow">Services</p>
           <h2 class="section-heading__title">Support for clarity, calm and emotional movement</h2>
           <p class="section-heading__copy">
@@ -189,17 +191,8 @@
         </div>
       </section>
 
-      <section class="spiritual-journey" id="philosophy">
-        <div class="spiritual-journey__image-wrap">
-          <img
-            class="spiritual-journey__image"
-            src="images/spiritual-journey.jpg"
-            data-placeholder="Spiritual journey and travel"
-            alt="Spiritual journey through travel, nature and reflection"
-          />
-        </div>
-
-        <div class="spiritual-journey__content">
+      <section class="spiritual-journey">
+        <div class="spiritual-journey__content section-anchor" id="philosophy">
           <p class="section-heading__eyebrow">Spiritual Journey</p>
           <h2 class="spiritual-journey__title">Grounded guidance, led by kindness and intuition</h2>
           <p>
@@ -210,6 +203,15 @@
             My belief in angels is present as a gentle thread rather than a performance. The heart of my work is to help
             you feel safe enough to pause, reflect and be supported as you find your next step.
           </p>
+        </div>
+
+        <div class="spiritual-journey__image-wrap">
+          <img
+            class="spiritual-journey__image"
+            src="images/spiritual-journey.jpg"
+            data-placeholder="Spiritual journey and travel"
+            alt="Spiritual journey through travel, nature and reflection"
+          />
         </div>
       </section>
 
@@ -235,10 +237,10 @@
         </div>
       </section>
 
-      <section class="booking-enquiry" id="enquiry">
+      <section class="booking-enquiry">
         <div class="booking-enquiry__background-image" aria-hidden="true"></div>
         <div class="booking-enquiry__content">
-          <div class="booking-enquiry__intro">
+          <div class="booking-enquiry__intro section-anchor" id="enquiry">
             <p class="section-heading__eyebrow">Book or Enquire</p>
             <h2 class="booking-enquiry__title">Begin with a gentle conversation</h2>
             <p>
@@ -247,7 +249,18 @@
             </p>
           </div>
 
-          <form class="booking-enquiry__form" action="#" method="post">
+          <form
+            class="booking-enquiry__form"
+            name="booking-enquiry"
+            method="post"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="booking-enquiry" />
+            <label class="booking-enquiry__field booking-enquiry__field--hidden">
+              <span>Do not fill this out if you are human</span>
+              <input name="bot-field" autocomplete="off" tabindex="-1" />
+            </label>
             <label class="booking-enquiry__field">
               <span>Name</span>
               <input type="text" name="name" autocomplete="name" placeholder="Your name" required />

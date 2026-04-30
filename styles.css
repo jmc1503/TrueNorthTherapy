@@ -81,25 +81,15 @@ textarea {
   text-decoration: none;
 }
 
-.site-header__brand-mark {
-  display: grid;
-  width: 2.15rem;
-  height: 2.15rem;
-  place-items: center;
-  border: 1px solid rgba(183, 143, 77, 0.2);
-  border-radius: 50%;
-  color: var(--color-gold);
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(243, 229, 211, 0.76));
-  box-shadow: 0 8px 22px rgba(183, 143, 77, 0.13);
+.site-header__logo {
+  width: clamp(8.75rem, 18vw, 12.5rem);
+  height: auto;
 }
 
 .site-navigation {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 0.7rem);
   right: 1rem;
   left: 1rem;
   padding: 0.7rem;
@@ -131,21 +121,89 @@ textarea {
 }
 
 .site-header__menu-button {
-  display: grid;
-  width: 2.65rem;
-  height: 2.65rem;
+  position: relative;
+  display: inline-grid;
+  width: 2.85rem;
+  height: 2.85rem;
   place-items: center;
   border: 1px solid rgba(183, 143, 77, 0.26);
   border-radius: 50%;
-  background: var(--color-paper);
+  color: var(--color-plum);
+  background:
+    radial-gradient(circle at 68% 24%, rgba(255, 250, 242, 0.98) 0 0.24rem, transparent 0.27rem),
+    linear-gradient(135deg, rgba(255, 250, 242, 0.98), rgba(243, 229, 211, 0.82));
+  box-shadow: 0 10px 28px rgba(82, 65, 49, 0.11);
   cursor: pointer;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
-.site-header__menu-line {
-  width: 1.05rem;
-  height: 2px;
-  border-radius: 999px;
+.site-header__menu-button:hover,
+.site-header__menu-button:focus-visible {
+  border-color: rgba(183, 143, 77, 0.44);
+  box-shadow: 0 12px 30px rgba(82, 65, 49, 0.15);
+  transform: translateY(-1px);
+}
+
+.site-header__menu-button:focus-visible {
+  outline: 3px solid rgba(201, 187, 215, 0.52);
+  outline-offset: 3px;
+}
+
+.site-header__menu-icon {
+  position: relative;
+  display: block;
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.site-header__menu-moon {
+  position: absolute;
+  right: 0.2rem;
+  bottom: 0.13rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 50%;
   background: var(--color-plum);
+  box-shadow: inset -0.26rem 0.02rem 0 0 var(--color-paper);
+  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+}
+
+.site-header__menu-sparkle,
+.site-header__menu-dot {
+  position: absolute;
+  background: var(--color-gold);
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.site-header__menu-sparkle {
+  top: 0.1rem;
+  left: 0.18rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  clip-path: polygon(50% 0, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0 50%, 39% 38%);
+}
+
+.site-header__menu-dot {
+  right: 0.03rem;
+  top: 0.2rem;
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 999px;
+}
+
+.site-header__menu-button[aria-expanded="true"] .site-header__menu-moon {
+  background: var(--color-gold);
+  box-shadow: inset 0 0 0 0.16rem var(--color-paper);
+  transform: rotate(45deg) scale(0.84);
+}
+
+.site-header__menu-button[aria-expanded="true"] .site-header__menu-sparkle {
+  transform: translate(0.45rem, 0.44rem) rotate(45deg) scale(0.85);
+}
+
+.site-header__menu-button[aria-expanded="true"] .site-header__menu-dot {
+  opacity: 0;
+  transform: translate(-0.35rem, 0.35rem) scale(0.4);
 }
 
 .home-hero {
@@ -314,6 +372,10 @@ textarea {
 .section-heading {
   width: min(100%, 44rem);
   margin-bottom: clamp(1.7rem, 4vw, 2.6rem);
+}
+
+.section-anchor {
+  scroll-margin-top: 7rem;
 }
 
 .section-heading--centered,
@@ -576,6 +638,10 @@ textarea {
   font-weight: 900;
 }
 
+.booking-enquiry__field--hidden {
+  display: none;
+}
+
 .booking-enquiry__field input,
 .booking-enquiry__field select,
 .booking-enquiry__field textarea {
@@ -708,6 +774,10 @@ textarea {
     align-items: center;
   }
 
+  .spiritual-journey__image-wrap {
+    order: -1;
+  }
+
   .spiritual-journey__content {
     padding-right: clamp(1rem, 4vw, 2rem);
   }
@@ -746,13 +816,16 @@ textarea {
 
   .site-header__brand {
     max-width: calc(100% - 3.35rem);
-    font-size: 1.14rem;
-    line-height: 1.1;
   }
 
   .site-navigation {
+    top: calc(100% + 0.8rem);
     right: 1rem;
     left: 1rem;
+  }
+
+  .section-anchor {
+    scroll-margin-top: 5.1rem;
   }
 
   .home-hero {
@@ -834,14 +907,8 @@ textarea {
 }
 
 @media (max-width: 380px) {
-  .site-header__brand {
-    font-size: 1rem;
-  }
-
-  .site-header__brand-mark {
-    width: 1.95rem;
-    height: 1.95rem;
-    font-size: 0.95rem;
+  .site-header__logo {
+    width: 8rem;
   }
 
   .home-hero,
