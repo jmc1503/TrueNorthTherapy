@@ -378,9 +378,11 @@ textarea {
   scroll-margin-top: 7rem;
 }
 
+
 .section-heading--centered,
 .services-overview .section-heading {
   margin-right: auto;
+  margin-bottom: 1.15rem;
   margin-left: auto;
   text-align: center;
 }
@@ -467,6 +469,7 @@ textarea {
 }
 
 .services-overview {
+  padding-top: clamp(2rem, 4vw, 3rem);
   border-top: 1px solid rgba(183, 143, 77, 0.12);
   border-bottom: 1px solid rgba(183, 143, 77, 0.12);
   background: linear-gradient(180deg, rgba(255, 250, 242, 0.36), rgba(243, 229, 211, 0.3));
@@ -490,6 +493,14 @@ textarea {
 .service-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 20px 46px rgba(82, 65, 49, 0.14);
+}
+
+.service-card--details-open {
+  grid-template-columns: 1fr;
+}
+
+.service-card--details-open .service-card__image {
+  display: none;
 }
 
 .service-card__image {
@@ -525,6 +536,65 @@ textarea {
   font-weight: 900;
   text-decoration-color: rgba(86, 105, 79, 0.3);
   text-underline-offset: 0.28rem;
+}
+
+.service-card__details-toggle {
+  align-self: flex-start;
+  border: 1px solid rgba(86, 105, 79, 0.28);
+  border-radius: 999px;
+  padding: 0.72rem 1rem;
+  color: var(--color-deep-sage);
+  background: rgba(255, 250, 242, 0.82);
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.service-card__details-toggle:hover,
+.service-card__details-toggle:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 24px rgba(82, 65, 49, 0.1);
+}
+
+.service-card__details {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(183, 143, 77, 0.18);
+  color: var(--color-muted);
+}
+
+.service-card__details p {
+  margin: 0 0 0.9rem;
+}
+
+.service-card__details-title {
+  margin: 0 0 0.65rem;
+  color: var(--color-plum);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.service-card__details-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-card__details-list li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.service-card__details-list li::before {
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+  content: "*";
 }
 
 .spiritual-journey {
@@ -759,6 +829,11 @@ textarea {
     grid-template-columns: minmax(0, 1.14fr) minmax(15rem, 0.86fr);
   }
 
+  .service-card--details-open,
+  .service-card--details-open:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
   .service-card:nth-child(even) .service-card__image {
     order: 2;
   }
@@ -796,12 +871,6 @@ textarea {
   .booking-enquiry__form {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .booking-enquiry__field--service {
-    grid-column: 1 / -1;
-    width: min(100%, 28rem);
-  }
-
   .booking-enquiry__field--message,
   .booking-enquiry__submit,
   .booking-enquiry__status {
@@ -827,7 +896,6 @@ textarea {
   .section-anchor {
     scroll-margin-top: 5.1rem;
   }
-
   .home-hero {
     width: min(100% - 1.5rem, var(--container-narrow));
     padding-top: clamp(2.4rem, 10vw, 3.6rem);
@@ -902,6 +970,10 @@ textarea {
   .booking-enquiry__form {
     padding: 1rem;
     border-radius: 22px;
+  }
+
+  .service-card__details-list {
+    grid-template-columns: 1fr;
   }
 
 }

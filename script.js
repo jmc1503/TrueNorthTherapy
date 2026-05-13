@@ -4,6 +4,7 @@ const navigationLinks = document.querySelectorAll(".site-navigation__link");
 const enquiryForm = document.querySelector(".booking-enquiry__form");
 const enquiryStatus = document.querySelector(".booking-enquiry__status");
 const placeholderImages = document.querySelectorAll("img[data-placeholder]");
+const serviceDetailsToggles = document.querySelectorAll(".service-card__details-toggle");
 
 const createPlaceholderSvg = (label) => {
   const safeLabel = label.replace(/[&<>"']/g, (character) => {
@@ -51,6 +52,27 @@ if (menuButton && navigation) {
     });
   });
 }
+
+serviceDetailsToggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const detailsId = toggle.getAttribute("aria-controls");
+    const details = detailsId ? document.getElementById(detailsId) : null;
+    const serviceCard = toggle.closest(".service-card");
+
+    if (!details) {
+      return;
+    }
+
+    const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isExpanded));
+    toggle.textContent = isExpanded ? "More information" : "Hide information";
+    details.hidden = isExpanded;
+
+    if (serviceCard) {
+      serviceCard.classList.toggle("service-card--details-open", !isExpanded);
+    }
+  });
+});
 
 if (enquiryForm && enquiryStatus) {
   enquiryForm.addEventListener("submit", async (event) => {
