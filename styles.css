@@ -3,13 +3,13 @@
   --color-paper: #fffaf2;
   --color-warm-cream: #f3e5d3;
   --color-sage: #8d9f82;
-  --color-deep-sage: #56694f;
-  --color-gold: #b78f4d;
+  --color-deep-sage: #042457;
+  --color-gold: #b89035;
   --color-peach: #dfaa91;
   --color-lilac: #c9bbd7;
-  --color-plum: #51415c;
-  --color-ink: #332c27;
-  --color-muted: #746a63;
+  --color-plum: #042457;
+  --color-ink: #042457;
+  --color-muted: #042457;
   --shadow-soft: 0 22px 70px rgba(82, 65, 49, 0.12);
   --shadow-card: 0 14px 38px rgba(82, 65, 49, 0.1);
   --radius-large: 30px;
@@ -307,8 +307,8 @@ textarea {
 
 .button--primary {
   color: #fffaf2;
-  background: linear-gradient(135deg, var(--color-deep-sage), #74865f);
-  box-shadow: 0 12px 26px rgba(86, 105, 79, 0.22);
+  background: #f073c4;
+  box-shadow: 0 12px 26px rgba(240, 115, 196, 0.28);
 }
 
 .button--secondary {
@@ -526,7 +526,7 @@ textarea {
 .about-lynn__experience-item span {
   display: block;
   margin-top: 0.35rem;
-  color: var(--color-muted);
+  color: #b89035;
   font-size: 0.95rem;
 }
 
@@ -879,8 +879,42 @@ textarea {
   margin: 0 auto;
 }
 
+.site-footer__brand-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
+}
+
 .site-footer__brand {
-  color: #fffaf2;
+  display: inline-flex;
+  width: fit-content;
+}
+
+.site-footer__brand-logo {
+  width: auto;
+  height: 3.6rem;
+  max-width: 6rem;
+  object-fit: contain;
+}
+
+.site-footer__accreditations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.site-footer__accreditations img {
+  width: auto;
+  height: 3.6rem;
+  max-width: 6rem;
+  object-fit: contain;
+}
+
+.site-footer__accreditation-logo--wide {
+  height: 4.6rem;
+  max-width: 8rem;
 }
 
 .site-footer__brand-block p {
@@ -890,7 +924,31 @@ textarea {
 .site-footer__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1rem;
+  gap: 0.75rem;
+}
+
+.site-footer__icon-link {
+  display: inline-grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid rgba(255, 250, 242, 0.26);
+  border-radius: 999px;
+  color: #fffaf2;
+  background: rgba(255, 250, 242, 0.08);
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.site-footer__icon-link:hover,
+.site-footer__icon-link:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255, 250, 242, 0.16);
+}
+
+.site-footer__icon-link svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
 }
 
 .site-footer__links a {
