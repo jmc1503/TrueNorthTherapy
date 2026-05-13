@@ -402,13 +402,75 @@ textarea {
 
 .about-lynn,
 .services-overview,
+.faqs-section,
+.pricing-section,
 .testimonials-preview,
 .booking-enquiry {
   padding: clamp(4rem, 8vw, 6.5rem) clamp(1rem, 4vw, 2rem);
 }
 
+.pricing-section__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.pricing-card {
+  padding: clamp(1.25rem, 3vw, 1.65rem);
+  border: 1px solid rgba(183, 143, 77, 0.18);
+  border-radius: var(--radius-card);
+  background: rgba(255, 250, 242, 0.78);
+  box-shadow: 0 10px 30px rgba(82, 65, 49, 0.08);
+}
+
+.pricing-card--featured {
+  border-color: rgba(86, 105, 79, 0.28);
+  background: rgba(255, 250, 242, 0.92);
+  box-shadow: var(--shadow-card);
+}
+
+.pricing-card__eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pricing-card__title {
+  margin: 0;
+  color: var(--color-plum);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  line-height: 1.1;
+}
+
+.pricing-card__price {
+  margin: 0.85rem 0;
+  color: var(--color-deep-sage);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.7rem, 4vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pricing-card__text {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.pricing-section__note {
+  max-width: 42rem;
+  margin: 1.25rem auto 0;
+  color: var(--color-muted);
+  font-weight: 800;
+  text-align: center;
+}
+
 .about-lynn__layout,
 .services-overview,
+.faqs-section,
+.pricing-section,
 .testimonials-preview {
   width: min(100%, var(--container-narrow));
   margin: 0 auto;
@@ -595,6 +657,58 @@ textarea {
   left: 0;
   color: var(--color-gold);
   content: "*";
+}
+
+.faqs-section__list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.faq-item {
+  border: 1px solid rgba(183, 143, 77, 0.18);
+  border-radius: var(--radius-card);
+  background: rgba(255, 250, 242, 0.78);
+  box-shadow: 0 10px 30px rgba(82, 65, 49, 0.08);
+}
+
+.faq-item__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  color: var(--color-plum);
+  font-weight: 900;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item__question::after {
+  flex: 0 0 auto;
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  content: "+";
+}
+
+.faq-item[open] .faq-item__question::after {
+  content: "-";
+}
+
+.faq-item__answer {
+  padding: 0 1.25rem 1.2rem;
+  color: var(--color-muted);
+}
+
+.faq-item__answer p {
+  margin: 0 0 0.85rem;
+}
+
+.faq-item__answer p:last-child {
+  margin-bottom: 0;
 }
 
 .spiritual-journey {
@@ -861,6 +975,10 @@ textarea {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .pricing-section__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .site-footer__main {
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -894,7 +1012,14 @@ textarea {
   }
 
   .section-anchor {
-    scroll-margin-top: 5.1rem;
+    scroll-margin-top: 5.8rem;
+    padding-top: 0.9rem;
+    margin-top: -0.9rem;
+  }
+
+  .services-overview .section-anchor {
+    padding-top: 1.15rem;
+    margin-top: -1.15rem;
   }
   .home-hero {
     width: min(100% - 1.5rem, var(--container-narrow));
@@ -912,6 +1037,8 @@ textarea {
 
   .about-lynn,
   .services-overview,
+  .faqs-section,
+  .pricing-section,
   .testimonials-preview,
   .booking-enquiry {
     padding-right: 1rem;
