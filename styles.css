@@ -271,8 +271,8 @@ textarea {
 }
 
 .home-hero__title {
-  max-width: 9.5ch;
-  font-size: clamp(3.6rem, 9vw, 6.8rem);
+  max-width: 19.5ch;
+  font-size: clamp(3.6rem, 9vw, 3.8rem);
 }
 
 .home-hero__subtitle {
