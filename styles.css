@@ -272,7 +272,7 @@ textarea {
 
 .home-hero__title {
   max-width: 19.5ch;
-  font-size: clamp(3.6rem, 9vw, 3.8rem);
+  font-size: clamp(2.65rem, 6vw, 3.15rem);
 }
 
 .home-hero__subtitle {
@@ -404,7 +404,7 @@ textarea {
 .section-heading__title,
 .spiritual-journey__title,
 .booking-enquiry__title {
-  font-size: clamp(2.05rem, 4.8vw, 3.35rem);
+  font-size: clamp(2.65rem, 6vw, 3.15rem);
 }
 
 .section-heading__copy {
@@ -455,7 +455,7 @@ textarea {
   margin: 0;
   color: var(--color-plum);
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-size: clamp(1.65rem, 3.5vw, 2.15rem);
   line-height: 1.1;
 }
 
@@ -596,7 +596,7 @@ textarea {
   margin: 0;
   color: var(--color-plum);
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-size: clamp(2.65rem, 6vw, 3.15rem);
   font-weight: 600;
   line-height: 1.08;
 }
@@ -648,7 +648,7 @@ textarea {
   margin: 0 0 0.65rem;
   color: var(--color-plum);
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.2rem;
+  font-size: clamp(2.65rem, 6vw, 3.15rem);
   line-height: 1.2;
 }
 
@@ -1099,8 +1099,21 @@ textarea {
 
   .home-hero__title {
     max-width: 100%;
-    font-size: clamp(2.8rem, 10vw, 3.8rem);
+    font-size: clamp(2.45rem, 8vw, 3rem);
     line-height: 1.05;
+  }
+
+  .section-heading__title,
+  .spiritual-journey__title,
+  .booking-enquiry__title,
+  .service-card__title,
+  .service-card__details-title {
+    font-size: clamp(2.45rem, 8vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .pricing-card__title {
+    font-size: clamp(1.55rem, 4vw, 2rem);
   }
 
   .home-hero__portrait {
@@ -1119,7 +1132,10 @@ textarea {
   }
 
   .service-card__image {
-    min-height: 13rem;
+    min-height: 12rem;
+    padding: 1rem;
+    object-fit: contain;
+    background: rgba(255, 250, 242, 0.64);
   }
 
   .spiritual-journey {
@@ -1153,7 +1169,7 @@ textarea {
 
   .home-hero__title {
     max-width: 100%;
-    font-size: clamp(2.45rem, 11vw, 3.2rem);
+    font-size: clamp(2.05rem, 9vw, 2.55rem);
   }
 
   .home-hero__subtitle,
@@ -1168,7 +1184,16 @@ textarea {
   .section-heading__title,
   .spiritual-journey__title,
   .booking-enquiry__title {
-    font-size: clamp(1.9rem, 10vw, 2.5rem);
+    font-size: clamp(2.05rem, 9vw, 2.55rem);
+  }
+
+  .pricing-card__title {
+    font-size: clamp(1.45rem, 6vw, 1.85rem);
+  }
+
+  .service-card__title,
+  .service-card__details-title {
+    font-size: clamp(2.05rem, 9vw, 2.55rem);
   }
 
   .about-lynn__lead {
@@ -1198,7 +1223,22 @@ textarea {
   }
 
   .home-hero__title {
-    font-size: clamp(2.2rem, 11vw, 2.65rem);
+    font-size: clamp(1.85rem, 9vw, 2.25rem);
+  }
+
+  .section-heading__title,
+  .spiritual-journey__title,
+  .booking-enquiry__title {
+    font-size: clamp(1.85rem, 9vw, 2.25rem);
+  }
+
+  .pricing-card__title {
+    font-size: clamp(1.35rem, 6vw, 1.7rem);
+  }
+
+  .service-card__title,
+  .service-card__details-title {
+    font-size: clamp(1.85rem, 9vw, 2.25rem);
   }
 
   .home-hero__portrait {
