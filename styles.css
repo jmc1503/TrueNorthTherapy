@@ -1098,7 +1098,9 @@ textarea {
   }
 
   .home-hero__title {
-    font-size: clamp(3.2rem, 15vw, 5rem);
+    max-width: 100%;
+    font-size: clamp(2.8rem, 10vw, 3.8rem);
+    line-height: 1.05;
   }
 
   .home-hero__portrait {
@@ -1143,7 +1145,8 @@ textarea {
   }
 
   .home-hero__title {
-    max-width: 8.5ch;
+    max-width: 100%;
+    font-size: clamp(2.45rem, 11vw, 3.2rem);
   }
 
   .home-hero__subtitle,
@@ -1188,7 +1191,7 @@ textarea {
   }
 
   .home-hero__title {
-    font-size: clamp(2.85rem, 14.5vw, 3.4rem);
+    font-size: clamp(2.2rem, 11vw, 2.65rem);
   }
 
   .home-hero__portrait {
