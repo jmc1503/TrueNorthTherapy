@@ -3,13 +3,13 @@
   --color-paper: #fffaf2;
   --color-warm-cream: #f3e5d3;
   --color-sage: #8d9f82;
-  --color-deep-sage: #3D0AB8;
+  --color-deep-sage: #032561;
   --color-gold: #b89035;
   --color-peach: #dfaa91;
   --color-lilac: #c9bbd7;
-  --color-plum: #3D0AB8;
-  --color-ink: #3D0AB8;
-  --color-muted: #3D0AB8;
+  --color-plum: #032561;
+  --color-ink: #032561;
+  --color-muted: #032561;
   --shadow-soft: 0 22px 70px rgba(82, 65, 49, 0.12);
   --shadow-card: 0 14px 38px rgba(82, 65, 49, 0.1);
   --radius-large: 30px;
@@ -307,7 +307,7 @@ textarea {
 
 .button--primary {
   color: #fffaf2;
-  border: 2px solid #3D0AB8;
+  border: 2px solid #032561;
   background: #f073c4;
   box-shadow: 0 12px 26px rgba(240, 115, 196, 0.28);
 }
@@ -345,7 +345,7 @@ textarea {
 .home-hero__portrait-caption {
   margin: 0;
   padding: 1rem 1.15rem 1.15rem;
-  color: var(--color-muted);
+  color: var(--color-gold);
   font-size: 0.92rem;
   font-weight: 700;
   text-align: center;
@@ -355,7 +355,7 @@ textarea {
   width: min(100% - 2rem, var(--container-narrow));
   margin: 0 auto;
   padding: 1.25rem clamp(1.2rem, 4vw, 2.25rem);
-  border: 2px solid #3D0AB8;
+  border: 2px solid #032561;
   border-radius: 999px;
   background: rgba(255, 250, 242, 0.68);
   box-shadow: 0 12px 34px rgba(82, 65, 49, 0.07);
