@@ -5,6 +5,22 @@ const enquiryForm = document.querySelector(".booking-enquiry__form");
 const enquiryStatus = document.querySelector(".booking-enquiry__status");
 const placeholderImages = document.querySelectorAll("img[data-placeholder]");
 const serviceDetailsToggles = document.querySelectorAll(".service-card__details-toggle");
+const fogBackground = document.querySelector("#site-fog-background");
+
+if (fogBackground && window.VANTA && window.VANTA.FOG) {
+  window.VANTA.FOG({
+    el: fogBackground,
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.0,
+    minWidth: 200.0,
+    highlightColor: 0xdecfc0,
+    midtoneColor: 0xe6e6e6,
+    lowlightColor: 0xdbd9e3,
+    baseColor: 0xf5f5f5,
+  });
+}
 
 const createPlaceholderSvg = (label) => {
   const safeLabel = label.replace(/[&<>"']/g, (character) => {
